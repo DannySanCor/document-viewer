@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { ViewerComponent } from './pages/viewer/viewer.component';
+import { NgxViewerModule } from 'ngx-viewer';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
-  providers: [],
+  providers: [NgxViewerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
