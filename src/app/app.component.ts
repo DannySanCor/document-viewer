@@ -18,8 +18,6 @@ export class AppComponent implements OnInit {
       this.zoom = value;
     })
   }
-  zoomOption(event:string) {
-    this.viewerService.Zoom(event);
-  }
+ 
 
 }

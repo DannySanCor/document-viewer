@@ -1,21 +1,22 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { ImageViewerComponent } from 'ngx-image-viewer';
 import { ViewerService } from 'src/services/viewer.service';
+import { CustomEvent } from '../image-viewer/image-viewer-config.model';
+
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.scss']
 })
 export class ViewerComponent implements OnInit{
-  @ViewChild('imageViewer') viewer!: ImageViewerComponent;
+  //@ViewChild('imageViewer') viewer!: ImageViewerComponent;
   fullscreen: boolean = false;
   imageIndex:any = 0;
-  index:number = 0;
+  index = 0;
   config:any; 
   images:Array<string>;
   zoomActual:number = 100;
+  zoomAction:string;
   constructor(private route:ActivatedRoute, private viewerService : ViewerService){
     this.route.params.subscribe(id => {
       this.imageIndex = id;
@@ -35,8 +36,8 @@ export class ViewerComponent implements OnInit{
         fullscreen: 'fa fa-arrows-alt',
       },
       btnShow: {
-        zoomIn: true,
-        zoomOut: true,
+        zoomIn: false,
+        zoomOut: false,
         rotateClockwise: true,
         rotateCounterClockwise: true,
         next: false,
@@ -62,5 +63,17 @@ export class ViewerComponent implements OnInit{
         console.log(value);
         this.zoomActual = value;
       })
+    }
+    handleEvent(event?: any) {
+      
+      switch (event?.name) {
+        case 'print':
+          console.log('run print logic');
+          break;
+      }
+    }
+    zoomOption(event:string) {
+      this.viewerService.Zoom(event);
+      this.zoomAction = event + this.zoomActual;
     }
 }

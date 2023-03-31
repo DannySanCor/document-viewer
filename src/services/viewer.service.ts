@@ -22,11 +22,11 @@ export class ViewerService {
   Zoom(event: string) {
     if (event === '+') {
       console.log(this.zoomValue);
-      this.zoomValue.next(this.zoomValue.value + 10);
+      this.zoomValue.next(this.zoomValue.value + 4);
       return;
     }
     if (this.zoomValue.value > 0) {
-      this.zoomValue.next(this.zoomValue.value - 10);
+      this.zoomValue.next(this.zoomValue.value - 4);
     }
   }
   getImage(id: any) {

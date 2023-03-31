@@ -6,3 +6,35 @@ div{
 ngx-image-viewer button {
     color: black;
 }
+ngx-image-viewer img {
+    transform: translate(0px, 0px) rotate(360deg) scale(1.7000);
+}
+.buttons {
+    z-index: 1000;
+}
+
+.toolbar {
+    position: fixed;
+    top: 20px;
+    
+    right: 2%;
+    height: 20px;
+    display: flex;
+    align-items: left;
+    background-color: hsl(165, 50%, 38%);;
+    color: white;
+    font-weight: 700;
+    font-size: larger;
+    z-index: 1000;
+  }
+ .toolbar p {
+    margin-top: -4px;
+   
+    font-weight: 500;
+    font-size: large;
+    margin-right: 5px;
+    
+  }
+ /*#save {
+    margin-right: 15px;
+  }*/
