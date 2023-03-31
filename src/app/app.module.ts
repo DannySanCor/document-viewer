@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewerComponent } from './pages/viewer/viewer.component';
-import { NgxViewerModule } from 'ngx-viewer';
+import {ImageViewerModule} from 'ngx-image-viewer'
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,9 +13,10 @@ import { NgxViewerModule } from 'ngx-viewer';
   imports: [
     BrowserModule,
     AppRoutingModule,
+   ImageViewerModule.forRoot()
     
   ],
-  providers: [NgxViewerModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,9 +2,9 @@
 <div class="toolbar" role="banner">
   <span>test doc</span>
   <div class="spacer"></div>
-  <p>100</p>
-  <button>+</button>
-  <button>-</button>
+  <p>{{zoom}}</p>
+  <button (click)="zoomOption('+')">+</button>
+  <button (click)="zoomOption('-')">-</button>
   <button id="save">save</button>
 </div>
 

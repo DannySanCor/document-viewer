@@ -1,5 +1,13 @@
-<div ngxViewer >
-    <img src="./../../../assets/documents/1.png" alt="Image 1" >
-    <img src="./../../../assets/documents/2.png" alt="Image 2">
-    <img src="./../../../assets/documents/3.png" alt="Image 3">
-  </div>
+ <div class="container">
+    <div class="row">
+        <div class="col">
+            <div [class.fullscreen]="fullscreen" class="image-viewer-container">
+                <div class="image-viewer">
+                    <ngx-image-viewer [style.width]="zoomActual" (configChange)="config" [(index)]="index" [src]="images" #imageViewer>
+
+                    </ngx-image-viewer>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div> 
